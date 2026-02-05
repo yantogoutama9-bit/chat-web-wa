@@ -1,5 +1,5 @@
 {
-  "name": "Chat Web WA Spark-only",
+  "name": "Chat Web WA",
   "short_name": "ChatWA",
   "start_url": "index.html",
   "display": "standalone",
