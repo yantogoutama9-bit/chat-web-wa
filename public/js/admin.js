@@ -1,4 +1,4 @@
-const ADMIN_PIN = "1234"; // <-- ganti PIN sesuka hati
+const ADMIN_PIN = "1234";
 
 function checkPin() {
   const pinInput = document.getElementById("admin-pin").value;
