@@ -1,11 +1,16 @@
-let chatCustomer = JSON.parse(localStorage.getItem("chatCustomer")) || [];
-let chatAdmin = JSON.parse(localStorage.getItem("chatAdmin")) || [];
+function getData() {
+  return {
+    chatCustomer: JSON.parse(localStorage.getItem("chatCustomer")) || [],
+    chatAdmin: JSON.parse(localStorage.getItem("chatAdmin")) || []
+  };
+}
 
 function renderChat() {
   const chatBox = document.getElementById("chat-box");
   chatBox.innerHTML = "";
+  const { chatCustomer, chatAdmin } = getData();
 
-  // Gabung pesan Customer + Admin
+  // Gabungkan semua pesan
   let combined = [...chatCustomer, ...chatAdmin];
   combined.forEach(msg => {
     chatBox.innerHTML += `<p><b>${msg.name} (${msg.phone}):</b> ${msg.text}</p>`;
@@ -21,6 +26,7 @@ function sendMessage() {
 
   if(!name || !phone || !input) return alert("Nama, No. Telepon, dan Pesan harus diisi!");
 
+  const { chatCustomer } = getData();
   chatCustomer.push({ name, phone, text: input });
   localStorage.setItem("chatCustomer", JSON.stringify(chatCustomer));
 
