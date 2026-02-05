@@ -1,3 +1,16 @@
+const ADMIN_PIN = "1234"; // <-- ganti PIN sesuka hati
+
+function checkPin() {
+  const pinInput = document.getElementById("admin-pin").value;
+  if(pinInput === ADMIN_PIN) {
+    document.getElementById("chat-container").style.display = "block";
+    document.getElementById("admin-pin").parentElement.style.display = "none";
+    renderChat();
+  } else {
+    alert("PIN salah!");
+  }
+}
+
 let chat = JSON.parse(localStorage.getItem("chatCustomer")) || [];
 
 function renderChat() {
@@ -16,5 +29,3 @@ function sendMessage() {
   input.value = "";
   renderChat();
 }
-
-renderChat();
