@@ -17,15 +17,19 @@ function renderChat() {
   const chatBox = document.getElementById("chat-box");
   chatBox.innerHTML = "";
   chat.forEach(msg => {
-    chatBox.innerHTML += `<p><b>${msg.sender}:</b> ${msg.text}</p>`;
+    chatBox.innerHTML += `<p><b>${msg.name} (${msg.phone}):</b> ${msg.text}</p>`;
   });
 }
 
 function sendMessage() {
   const input = document.getElementById("msg-input");
-  if(input.value.trim() === "") return;
-  chat.push({ sender: "Admin", text: input.value });
+  if(input.value.trim() === "") return alert("Pesan kosong!");
+
+  // Admin balas ke chatCustomer dengan sender "Admin"
+  const adminMsg = { name: "Admin", phone: "-", text: input.value, sender: "Admin" };
+  chat.push(adminMsg);
   localStorage.setItem("chatCustomer", JSON.stringify(chat));
-  input.value = "";
+
+  document.getElementById("msg-input").value = "";
   renderChat();
 }
