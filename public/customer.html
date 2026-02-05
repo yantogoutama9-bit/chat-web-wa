@@ -1,146 +1,54 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Customer Chat</title>
-  <link rel="manifest" href="./manifest.webmanifest">
-  <style>
-    body{margin:0;font-family:system-ui;background:#0b141a;color:#e9edef;display:flex;justify-content:center;padding:18px}
-    .box{width:min(760px,100%);background:#111b21;border-radius:18px;padding:14px;border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 40px rgba(0,0,0,.45)}
-    input,textarea{width:100%;padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.25);color:#e9edef;outline:none}
-    button{padding:12px 14px;border-radius:14px;border:0;background:#25D366;color:#062012;font-weight:900;cursor:pointer}
-    .row{display:flex;gap:10px;margin-top:10px}
-    .msg{background:#202c33;border-radius:14px;padding:10px;margin-top:8px}
-    small{color:#8696a0}
-    .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-    .link{color:#25D366;text-decoration:none;font-weight:800}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Customer</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Firebase JS SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
-  <div class="box">
-    <div class="top">
-      <div>
-        <h2 style="margin:0 0 6px 0">Chat Customer 🟢</h2>
-        <small>Masukkan nomor & nama, lalu kirim pesan.</small>
-      </div>
-      <a class="link" href="./index.html">← Menu</a>
-    </div>
+  <h1>Chat Customer</h1>
+  <div id="chat-box"></div>
+  <input type="text" id="msg-input" placeholder="Ketik pesan...">
+  <button onclick="sendMessage()">Kirim</button>
 
-    <div class="row">
-      <input id="phone" placeholder="Nomor HP (contoh: 08123456789)" />
-      <input id="name" placeholder="Nama (optional)" />
-    </div>
+  <script>
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyDiI9FCOT3mPPD9GF0U3PevtcSBPkzsH3Y",
+      authDomain: "chat-web-wa.firebaseapp.com",
+      projectId: "chat-web-wa",
+      storageBucket: "chat-web-wa.firebasestorage.app",
+      messagingSenderId: "429353619549",
+      appId: "1:429353619549:web:4584afab307b78072c7db4",
+      measurementId: "G-VKV3T9HZBG"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
 
-    <div class="row">
-      <textarea id="text" placeholder="Tulis pesan..." rows="2"></textarea>
-      <button id="send">Kirim</button>
-    </div>
+    function sendMessage() {
+      const input = document.getElementById("msg-input");
+      if(input.value.trim() === "") return;
+      db.collection("messages").add({
+        text: input.value,
+        sender: "customer",
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      input.value = "";
+    }
 
-    <div id="log"></div>
-  </div>
-
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-  import {
-    getFirestore, doc, setDoc, addDoc, collection,
-    serverTimestamp
-  } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
-
-  // ====== ISI CONFIG FIREBASE LU ======
-  const firebaseConfig = {
-    apiKey: "ISI_API_KEY",
-    authDomain: "ISI_AUTH_DOMAIN",
-    projectId: "ISI_PROJECT_ID",
-    storageBucket: "ISI_STORAGE_BUCKET",
-    messagingSenderId: "ISI_SENDER_ID",
-    appId: "ISI_APP_ID"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  const phoneEl = document.getElementById("phone");
-  const nameEl = document.getElementById("name");
-  const textEl = document.getElementById("text");
-  const sendBtn = document.getElementById("send");
-  const log = document.getElementById("log");
-
-  function chatIdFromPhone(phone){
-    return phone.replace(/\D/g,""); // hanya angka
-  }
-
-  function addLocal(text){
-    const div = document.createElement("div");
-    div.className = "msg";
-    div.textContent = text;
-    log.prepend(div);
-  }
-
-  sendBtn.onclick = async () => {
-    const phone = (phoneEl.value || "").trim();
-    const name = (nameEl.value || "").trim();
-    const text = (textEl.value || "").trim();
-
-    if(!phone) return alert("Nomor HP wajib diisi");
-    if(!text) return alert("Pesan jangan kosong");
-
-    const chatId = chatIdFromPhone(phone);
-
-    // create/update chat metadata (NO unreadAdmin here!)
-    await setDoc(doc(db, "supportChats", chatId), {
-      chatId,
-      customerPhone: phone,
-      customerName: name || phone,
-      status: "open",
-      label: "NEW",
-      updatedAt: serverTimestamp()
-    }, { merge:true });
-
-    // create message (this will trigger Cloud Function unread++)
-    await addDoc(collection(db, "supportChats", chatId, "messages"), {
-      role: "customer",
-      text,
-      createdAt: serverTimestamp()
+    db.collection("messages").orderBy("timestamp").onSnapshot(snapshot => {
+      const chatBox = document.getElementById("chat-box");
+      chatBox.innerHTML = "";
+      snapshot.forEach(doc => {
+        const msg = doc.data();
+        chatBox.innerHTML += `<p><b>${msg.sender}:</b> ${msg.text}</p>`;
+      });
     });
-
-    addLocal("Kamu: " + text);
-    textEl.value = "";
-  };
-
-  // ===== PWA: Install to Home Screen =====
-  let deferredPrompt = null;
-  const installWrap = document.getElementById("installWrap");
-  const installBtn = document.getElementById("installBtn");
-
-  window.addEventListener("beforeinstallprompt", (e) => {
-    // Prevent the mini-infobar from appearing on mobile
-    e.preventDefault();
-    deferredPrompt = e;
-    installWrap.style.display = "block";
-  });
-
-  installBtn?.addEventListener("click", async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    deferredPrompt = null;
-    installWrap.style.display = "none";
-    console.log("PWA install outcome:", outcome);
-  });
-
-  // Register Service Worker (required for PWA installability on many browsers)
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", async () => {
-      try {
-        await navigator.serviceWorker.register("./sw.js");
-        console.log("Service Worker registered");
-      } catch (err) {
-        console.warn("Service Worker registration failed:", err);
-      }
-    });
-  }
-
-</script>
+  </script>
 </body>
 </html>
