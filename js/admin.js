@@ -11,24 +11,29 @@ function checkPin() {
   }
 }
 
-let chat = JSON.parse(localStorage.getItem("chatCustomer")) || [];
+let chatCustomer = JSON.parse(localStorage.getItem("chatCustomer")) || [];
+let chatAdmin = JSON.parse(localStorage.getItem("chatAdmin")) || [];
 
 function renderChat() {
   const chatBox = document.getElementById("chat-box");
   chatBox.innerHTML = "";
-  chat.forEach(msg => {
+
+  // Gabung pesan Customer + Admin
+  let combined = [...chatCustomer, ...chatAdmin];
+  combined.forEach(msg => {
     chatBox.innerHTML += `<p><b>${msg.name} (${msg.phone}):</b> ${msg.text}</p>`;
   });
+
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 function sendMessage() {
-  const input = document.getElementById("msg-input");
-  if(input.value.trim() === "") return alert("Pesan kosong!");
+  const input = document.getElementById("msg-input").value.trim();
+  if(!input) return alert("Pesan kosong!");
 
-  // Admin balas ke chatCustomer dengan sender "Admin"
-  const adminMsg = { name: "Admin", phone: "-", text: input.value, sender: "Admin" };
-  chat.push(adminMsg);
-  localStorage.setItem("chatCustomer", JSON.stringify(chat));
+  const adminMsg = { name: "Admin", phone: "-", text: input };
+  chatAdmin.push(adminMsg);
+  localStorage.setItem("chatAdmin", JSON.stringify(chatAdmin));
 
   document.getElementById("msg-input").value = "";
   renderChat();
