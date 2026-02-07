@@ -3,7 +3,21 @@ const supabase = supabaseJs.createClient(
   "ANON_KEY_LO"
 )
 
-async function load() {
+const ADMIN_PIN = "1234"
+
+function login() {
+  const pin = document.getElementById('pin').value
+  if (pin !== ADMIN_PIN) {
+    alert("PIN salah")
+    return
+  }
+
+  document.getElementById('login').style.display = 'none'
+  document.getElementById('dashboard').style.display = 'block'
+  loadChats()
+}
+
+async function loadChats() {
   const { data, error } = await supabase
     .from('chats')
     .select(`
@@ -11,10 +25,15 @@ async function load() {
       customers(name, phone),
       messages(content, sender)
     `)
-    .order('id', { ascending: false })
+    .order('created_at', { ascending: false })
 
   if (error) {
-    document.body.innerText = error.message
+    document.getElementById('list').innerText = error.message
+    return
+  }
+
+  if (!data.length) {
+    document.getElementById('list').innerText = "Belum ada chat"
     return
   }
 
@@ -28,5 +47,3 @@ async function load() {
       </div>
     `).join('')
 }
-
-load()
