@@ -2,13 +2,23 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Admin Dashboard</title>
+  <title>Admin</title>
 </head>
 <body>
-  <h2>Admin Dashboard</h2>
-  <div id="list"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="admin.js"></script>
+<h2>Admin Dashboard</h2>
+
+<div id="login">
+  <input id="pin" placeholder="PIN Admin" type="password">
+  <button onclick="login()">Masuk</button>
+</div>
+
+<div id="dashboard" style="display:none">
+  <h3>Daftar Chat</h3>
+  <div id="list"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="admin.js"></script>
 </body>
 </html>
