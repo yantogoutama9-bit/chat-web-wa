@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chat Customer</title>
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="css/style.css">
-<script src="js/customer.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Customer Chat</title>
 </head>
 <body>
-<h1>Chat Customer</h1>
+  <h2>Customer Chat</h2>
 
-<label>Nama:</label>
-<input type="text" id="customer-name" placeholder="Masukkan nama" style="padding:10px; width:70%;"><br>
+  <input id="name" placeholder="Nama">
+  <input id="phone" placeholder="No HP">
+  <br><br>
 
-<label>No. Telepon:</label>
-<input type="text" id="customer-phone" placeholder="Masukkan nomor telepon" style="padding:10px; width:70%;"><br>
+  <input id="msg" placeholder="Tulis pesan">
+  <button onclick="send()">Kirim</button>
 
-<div id="chat-box" style="border:1px solid #ccc; height:300px; overflow-y:auto; padding:10px; margin-top:10px;"></div>
+  <pre id="log"></pre>
 
-<input type="text" id="msg-input" placeholder="Ketik pesan..." style="padding:10px; width:70%; margin-top:10px;">
-<button onclick="sendMessage()">Kirim</button>
-
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="customer.js"></script>
 </body>
 </html>
