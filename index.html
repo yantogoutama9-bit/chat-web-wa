@@ -3,19 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yanto Goutama | Strategic Leadership Architect & ISLA Founder</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>ISLA Insight - Strategic Leadership Framework</title>
+    <meta http-equiv="refresh" content="0; url=https://forisaabadijayasejahtera.github.io/ISLA-Insight/">
+    <script>
+        window.location.href = "https://forisaabadijayasejahtera.github.io/ISLA-Insight/";
+    </script>
     <style>
-        :root {
-            --primary-gold: #D4AF37;
-            --deep-navy: #0F172A;
-            --soft-silver: #C0C0C0;
-            --accent-blue: #3B82F6;
-            --text-dark: #1E293B;
-            --text-light: #64748B;
-            --bg-warm: #FAFAF8;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -23,1137 +16,193 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-warm);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 5%;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            padding: 0.8rem 5%;
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--deep-navy);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo span {
-            color: var(--primary-gold);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gold);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .forisa-badge {
-            background: linear-gradient(135deg, var(--deep-navy), var(--accent-blue));
-            color: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .forisa-badge:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-        }
-
-        /* Hero Section */
-        .hero {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            padding: 8rem 5% 5rem;
-            position: relative;
-            background: linear-gradient(135deg, #fafafa 0%, #f0f4f8 100%);
-            overflow: hidden;
+            flex-direction: column;
+            color: #ffffff;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-            animation: float 20s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-30px, -30px) rotate(180deg); }
-        }
-
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--deep-navy);
-        }
-
-        .hero-content .highlight {
-            background: linear-gradient(135deg, var(--primary-gold), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 3rem;
-            line-height: 1.8;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-gold), #B8941F);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--deep-navy);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 2px solid var(--deep-navy);
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background: var(--deep-navy);
-            color: white;
-        }
-
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .architecture-graphic {
-            width: 500px;
-            height: 500px;
-            position: relative;
-        }
-
-        .isla-core {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 180px;
-            height: 180px;
-            background: linear-gradient(135deg, var(--deep-navy), var(--accent-blue));
-            border-radius: 50%;
+        .redirect-container {
+            flex: 1;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.3);
-            z-index: 10;
-            animation: pulse 4s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 20px 60px rgba(15, 23, 42, 0.3); }
-            50% { box-shadow: 0 30px 80px rgba(59, 130, 246, 0.4); }
-        }
-
-        .orbit-layer {
-            position: absolute;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .orbit-1 { width: 280px; height: 280px; animation: rotate 20s linear infinite; }
-        .orbit-2 { width: 380px; height: 380px; animation: rotate 30s linear infinite reverse; }
-        .orbit-3 { width: 480px; height: 480px; animation: rotate 40s linear infinite; }
-
-        @keyframes rotate {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        .orbit-node {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--deep-navy);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border: 2px solid var(--primary-gold);
-        }
-
-        .node-1 { top: -30px; left: 50%; transform: translateX(-50%); }
-        .node-2 { bottom: -30px; left: 50%; transform: translateX(-50%); }
-        .node-3 { left: -30px; top: 50%; transform: translateY(-50%); }
-
-        /* ISLA Framework Section */
-        .isla-section {
-            padding: 8rem 5%;
-            background: white;
-            position: relative;
-        }
-
-        .section-header {
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto 5rem;
+            padding: 2rem;
         }
 
-        .section-tag {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--primary-gold);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+        .logo-section {
+            margin-bottom: 2rem;
         }
 
-        .section-header h2 {
-            font-size: 3rem;
-            color: var(--deep-navy);
-            margin-bottom: 1.5rem;
-        }
-
-        .section-header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        .isla-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .isla-card {
-            background: linear-gradient(135deg, #ffffff, #f8fafc);
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .isla-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-gold), var(--accent-blue));
-            transform: scaleX(0);
-            transition: transform 0.4s;
-        }
-
-        .isla-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-        }
-
-        .isla-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .card-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary-gold), #B8941F);
-            border-radius: 20px;
+        .isla-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-        .isla-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--deep-navy);
-        }
-
-        .isla-card p {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-list {
-            list-style: none;
-        }
-
-        .feature-list li {
-            padding: 0.5rem 0;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .feature-list li::before {
-            content: '→';
-            color: var(--primary-gold);
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
             font-weight: bold;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        /* Forisa Connection Section */
-        .forisa-section {
-            padding: 8rem 5%;
-            background: linear-gradient(135deg, var(--deep-navy) 0%, #1e293b 100%);
-            color: white;
-            position: relative;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
             overflow: hidden;
+            margin: 2rem auto;
         }
 
-        .forisa-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .loading-progress {
             width: 100%;
             height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background: #ffffff;
+            animation: loading 1.5s ease-in-out infinite;
         }
 
-        .forisa-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
+        @keyframes loading {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
-        .forisa-content h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, white, var(--soft-silver));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .forisa-content > p {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .forisa-services {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .service-item {
-            background: rgba(255,255,255,0.05);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s;
-        }
-
-        .service-item:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateX(10px);
-        }
-
-        .service-item h4 {
-            color: var(--primary-gold);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .service-item p {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-        }
-
-        .forisa-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            background: var(--primary-gold);
-            color: var(--deep-navy);
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-        }
-
-        .forisa-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
-        }
-
-        .forisa-visual {
-            position: relative;
-        }
-
-        .impact-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .stat-card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.08);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-        }
-
-        /* White Paper Section */
-        .publication-section {
-            padding: 8rem 5%;
-            background: var(--bg-warm);
-        }
-
-        .publication-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 30px;
-            padding: 4rem;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .publication-content h2 {
-            font-size: 2.5rem;
-            color: var(--deep-navy);
-            margin-bottom: 1.5rem;
-        }
-
-        .publication-meta {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .abstract {
-            background: rgba(212, 175, 55, 0.05);
-            padding: 1.5rem;
-            border-left: 4px solid var(--primary-gold);
-            border-radius: 0 10px 10px 0;
-            margin-bottom: 2rem;
-            font-style: italic;
-            color: var(--text-dark);
-            line-height: 1.8;
-        }
-
-        .download-btn {
-            background: var(--deep-navy);
-            color: white;
+        .manual-link {
+            margin-top: 2rem;
             padding: 1rem 2rem;
-            border-radius: 10px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .download-btn:hover {
-            background: var(--accent-blue);
-            transform: translateY(-2px);
-        }
-
-        .toc-preview {
-            background: linear-gradient(135deg, #f8fafc, #ffffff);
-            padding: 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .toc-preview h3 {
-            margin-bottom: 1.5rem;
-            color: var(--deep-navy);
-            font-size: 1.3rem;
-        }
-
-        .toc-list {
-            list-style: none;
-        }
-
-        .toc-list li {
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: var(--text-dark);
-        }
-
-        .toc-list li:last-child {
-            border-bottom: none;
-        }
-
-        .toc-num {
-            background: var(--primary-gold);
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
             color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 700;
-            flex-shrink: 0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        /* Contact Section */
-        .contact-section {
-            padding: 8rem 5%;
-            background: white;
+        .manual-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer - Sesuai dengan struktur yang sudah ada */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
             text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .contact-container {
+        .footer-content {
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .contact-section h2 {
-            font-size: 3rem;
-            color: var(--deep-navy);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-section > p {
-            color: var(--text-light);
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-methods {
+        .contact-info {
             display: flex;
             justify-content: center;
-            gap: 3rem;
-            margin-bottom: 4rem;
+            gap: 2rem;
             flex-wrap: wrap;
+            margin-bottom: 1.5rem;
         }
 
         .contact-item {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .contact-item a {
+            color: #ffffff;
             text-decoration: none;
-            color: var(--text-dark);
-            transition: transform 0.3s;
+            transition: opacity 0.3s;
         }
 
-        .contact-item:hover {
-            transform: translateY(-5px);
+        .contact-item a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
         }
 
-        .contact-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--bg-warm), white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            border: 2px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.3s;
-        }
-
-        .contact-item:hover .contact-icon {
-            background: var(--primary-gold);
-            color: white;
-            border-color: var(--primary-gold);
-        }
-
-        .contact-item span {
-            font-weight: 600;
-            color: var(--deep-navy);
-        }
-
-        .footer-note {
-            color: var(--text-light);
+        .copyright {
             font-size: 0.9rem;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-container,
-            .forisa-container,
-            .publication-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-
-            .isla-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .architecture-graphic {
-                width: 350px;
-                height: 350px;
-            }
-
-            .orbit-3 { display: none; }
+            opacity: 0.7;
+            margin-top: 1rem;
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            h1 {
+                font-size: 1.8rem;
             }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
             }
-
-            .section-header h2,
-            .forisa-content h2,
-            .contact-section h2 {
-                font-size: 2rem;
-            }
-
-            .forisa-services {
-                grid-template-columns: 1fr;
-            }
-
-            .impact-stats {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s, transform 0.8s;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span>YG</span> | Strategic Architect
-            </a>
-            <ul class="nav-links">
-                <li><a href="#isla">ISLA Framework</a></li>
-                <li><a href="#forisa">PT Forisa</a></li>
-                <li><a href="#publication">White Paper</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-            <a href="https://forisaabadijayasejahtera.github.io/ForisaImpact/" target="_blank" class="forisa-badge">
-                Kunjungi Forisa Impact →
-            </a>
+    <div class="redirect-container">
+        <div class="logo-section">
+            <div class="isla-badge">ISLA</div>
+            <h1>ISLA Insight</h1>
+            <p class="subtitle">Strategic Leadership Framework - Mengarahkan Anda ke platform insight utama...</p>
         </div>
-    </nav>
+        
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+        
+        <p>Jika tidak terredirect otomatis, klik tombol di bawah:</p>
+        
+        <a href="https://forisaabadijayasejahtera.github.io/ISLA-Insight/" class="manual-link">
+            Kunjungi ISLA Insight →
+        </a>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content fade-in">
-                <h1>
-                    Strategic<br>
-                    <span class="highlight">Leadership Architect</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Founder of ISLA Framework & PT Forisa Abadijaya Sejahtera
-                </p>
-                <p class="hero-description">
-                    Mengembangkan <strong>Integrated Strategic Leadership Architecture (ISLA)</strong> — 
-                    sebuah pendekatan revolusioner yang menggabungkan arsitektur organisasi dengan 
-                    kepemimpinan strategis terintegrasi untuk menciptakan transformasi berkelanjutan.
-                </p>
-                <div class="cta-group">
-                    <a href="#isla" class="btn-primary">Jelajahi ISLA Framework</a>
-                    <a href="https://forisaabadijayasejahtera.github.io/ForisaImpact/" target="_blank" class="btn-secondary">Layanan Konsultasi</a>
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:info.forisaimpact@gmail.com">info.forisaimpact@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <a href="https://wa.me/6285117283177" target="_blank">WhatsApp</a>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <a href="https://www.linkedin.com/in/yanto-goutama-chcm-cplc-369322223/" target="_blank">LinkedIn</a>
                 </div>
             </div>
-            <div class="hero-visual fade-in">
-                <div class="architecture-graphic">
-                    <div class="orbit-layer orbit-3">
-                        <div class="orbit-node node-3">AI</div>
-                    </div>
-                    <div class="orbit-layer orbit-2">
-                        <div class="orbit-node node-2">HC</div>
-                    </div>
-                    <div class="orbit-layer orbit-1">
-                        <div class="orbit-node node-1">Leadership</div>
-                    </div>
-                    <div class="isla-core">
-                        <span>ISLA</span>
-                        <small style="font-size: 0.7rem; font-weight: 400; opacity: 0.9;">Framework</small>
-                    </div>
-                </div>
+            <div class="copyright">
+                © 2026 Yanto Goutama. All Rights Reserved.
             </div>
         </div>
-    </section>
-
-    <!-- ISLA Framework Section -->
-    <section class="isla-section" id="isla">
-        <div class="section-header fade-in">
-            <span class="section-tag">Framework Architecture</span>
-            <h2>Integrated Strategic Leadership Architecture</h2>
-            <p>
-                ISLA adalah arsitektur tiga layer yang bekerja sebagai satu sistem kepemimpinan strategis, 
-                mengintegrasikan kompetensi kepemimpinan, strategi human capital, dan kecerdasan buatan.
-            </p>
-        </div>
-
-        <div class="isla-grid">
-            <div class="isla-card fade-in">
-                <div class="card-icon">🎯</div>
-                <h3>Leadership Competency Layer</h3>
-                <p>
-                    Kamus kompetensi berbasis strategi bisnis dengan indikator perilaku terukur 
-                    dan sistem asesmen berbasis gap analysis.
-                </p>
-                <ul class="feature-list">
-                    <li>Strategic Competency Mapping</li>
-                    <li>Behavioral Indicators</li>
-                    <li>Gap Analysis System</li>
-                </ul>
-            </div>
-
-            <div class="isla-card fade-in">
-                <div class="card-icon">👥</div>
-                <h3>Human Capital Strategy Layer</h3>
-                <p>
-                    Integrasi talent acquisition, performance management berbasis KPI bisnis, 
-                    dan succession planning berbasis data.
-                </p>
-                <ul class="feature-list">
-                    <li>Talent Acquisition Strategy</li>
-                    <li>Performance-KPI Alignment</li>
-                    <li>Data-Driven Succession</li>
-                </ul>
-            </div>
-
-            <div class="isla-card fade-in">
-                <div class="card-icon">🤖</div>
-                <h3>AI Decision Intelligence Layer</h3>
-                <p>
-                    Pemanfaatan analitik data real-time, predictive insight, dan decision support 
-                    berbasis evidence untuk presisi keputusan.
-                </p>
-                <ul class="feature-list">
-                    <li>Real-time Analytics</li>
-                    <li>Predictive Insights</li>
-                    <li>Evidence-Based Decisions</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- PT Forisa Section -->
-    <section class="forisa-section" id="forisa">
-        <div class="forisa-container">
-            <div class="forisa-content fade-in">
-                <span class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--primary-gold); border-color: rgba(255,255,255,0.2);">
-                    Perusahaan Induk
-                </span>
-                <h2>PT Forisa Abadijaya Sejahtera</h2>
-                <p>
-                    Sebagai founder dan principal consultant, saya memimpin PT Forisa Abadijaya Sejahtera 
-                    untuk membantu organisasi memahami, menata, dan menyelaraskan manusia serta sistem kerja 
-                    agar pertumbuhan bisnis tidak terhambat oleh persoalan SDM.
-                </p>
-                
-                <div class="forisa-services">
-                    <div class="service-item">
-                        <h4>HR Diagnostic</h4>
-                        <p>Assessment komprehensif sistem SDM organisasi Anda</p>
-                    </div>
-                    <div class="service-item">
-                        <h4>SOP Development</h4>
-                        <p>Pengembangan sistem dan prosedur SDM terstandarisasi</p>
-                    </div>
-                    <div class="service-item">
-                        <h4>Leadership Consulting</h4>
-                        <p>Konsultasi kepemimpinan berbasis ISLA Framework</p>
-                    </div>
-                    <div class="service-item">
-                        <h4>HR Retainer</h4>
-                        <p>Pendampingan berkelanjutan untuk transformasi SDM</p>
-                    </div>
-                </div>
-
-                <a href="https://forisaabadijayasejahtera.github.io/ForisaImpact/" target="_blank" class="forisa-cta">
-                    Kunjungi Website Forisa Impact
-                    <span style="font-size: 1.2rem;">→</span>
-                </a>
-            </div>
-
-            <div class="forisa-visual fade-in">
-                <div class="impact-stats">
-                    <div class="stat-card">
-                        <span class="stat-number">ISLA</span>
-                        <span class="stat-label">Framework Arsitektur</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">3</span>
-                        <span class="stat-label">Layer Integrasi</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">∞</span>
-                        <span class="stat-label">Dampak Berkelanjutan</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">AI</span>
-                        <span class="stat-label">Decision Intelligence</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publication Section -->
-    <section class="publication-section" id="publication">
-        <div class="publication-container fade-in">
-            <div class="publication-content">
-                <span class="section-tag">Academic Publication</span>
-                <h2>ISLA Framework White Paper</h2>
-                <div class="publication-meta">
-                    <span class="meta-item">📄 PDF Format</span>
-                    <span class="meta-item">🏢 Enterprise Focus</span>
-                    <span class="meta-item">🎯 Strategic Implementation</span>
-                </div>
-                
-                <div class="abstract">
-                    "Dalam era disrupsi digital yang dipercepat oleh kecerdasan buatan (AI), 
-                    organisasi enterprise menghadapi paradoks strategis: semakin banyak data yang tersedia, 
-                    semakin sulit pengambilan keputusan yang cepat dan akurat."
-                </div>
-
-                <p style="margin-bottom: 2rem; color: var(--text-light); line-height: 1.8;">
-                    White paper ini memperkenalkan framework holistik yang mengintegrasikan 
-                    tiga dimensi kritis: kepemimpinan strategis, human capital, dan sistem 
-                    kecerdasan data dalam satu arsitektur terukur.
-                </p>
-
-                <a href="https://drive.google.com/file/d/1vJI0-SUo3SDGmBszsiX3P9R3AQL2AyiN/view?usp=sharing" 
-       target="_blank" class="download-btn">
-                   <span>↓</span> Download Full White Paper
-                </a>
-            </div>
-
-            <div class="toc-preview">
-                <h3>Table of Contents</h3>
-                <ul class="toc-list">
-                    <li>
-                        <span class="toc-num">01</span>
-                        <div>
-                            <strong>Introduction & Background</strong>
-                            <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.2rem;">The strategic paradox of digital disruption</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="toc-num">02</span>
-                        <div>
-                            <strong>Literature Review</strong>
-                            <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.2rem;">Leadership theory meets AI implementation</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="toc-num">03</span>
-                        <div>
-                            <strong>The ISLA Framework</strong>
-                            <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.2rem;">Three-layer integrated architecture</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="toc-num">04</span>
-                        <div>
-                            <strong>Implementation Methodology</strong>
-                            <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.2rem;">From theory to organizational practice</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="toc-num">05</span>
-                        <div>
-                            <strong>Case Studies</strong>
-                            <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.2rem;">Real-world enterprise transformations</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <span class="section-tag">Mari Berkolaborasi</span>
-            <h2>Membangun Arsitektur Kepemimpinan Bersama</h2>
-            <p>
-                Tertarik dengan ISLA Framework atau ingin berdiskusi tentang transformasi 
-                kepemimpinan strategis organisasi Anda?
-            </p>
-
-            <div class="contact-methods">
-                <a href="mailto:info.forisaimpact@gmail.com" class="contact-item">
-                    <div class="contact-icon">✉️</div>
-                    <span>Email</span>
-                    <small style="color: var(--text-light); font-size: 0.85rem;">info.forisaimpact@gmail.com</small>
-                </a>
-                
-                <a href="https://wa.me/6285117283177" target="_blank" class="contact-item">
-                    <div class="contact-icon">💬</div>
-                    <span>WhatsApp</span>
-                    <small style="color: var(--text-light); font-size: 0.85rem;">Konsultasi Langsung</small>
-                </a>
-
-                <a href="https://linkedin.com/in/yanto-goutama-chcm-cplc-369322223" target="_blank" class="contact-item">
-                    <div class="contact-icon">💼</div>
-                    <span>LinkedIn</span>
-                    <small style="color: var(--text-light); font-size: 0.85rem;">Yanto Goutama</small>
-                </a>
-            </div>
-
-            <div class="footer-note">
-                <p>
-                    <strong>Arsitek ISLA Framework</strong> | Founder PT Forisa Abadijaya Sejahtera<br>
-                    Mengintegrasikan Kepemimpinan, Human Capital, dan AI untuk Transformasi Berkelanjutan
-                </p>
-                <p style="margin-top: 1rem; font-size: 0.8rem;">
-                    © 2026 Yanto Goutama. All rights reserved.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Add visible class to hero elements immediately
-        document.querySelectorAll('.hero .fade-in').forEach(el => {
-            el.classList.add('visible');
-        });
-    </script>
+    </footer>
 </body>
 </html>
-
-
-
