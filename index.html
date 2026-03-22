@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yanto Goutama | Strategic Leadership Architech</title>
+    <title>Yanto Goutama Portofolio | Integrated Strategic Leadership Architech</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -180,6 +180,27 @@
             box-shadow: var(--shadow-hover);
         }
 
+        .cta-button-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: transparent;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+
+        .cta-button-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
         .hero-visual {
             position: relative;
             display: flex;
@@ -207,6 +228,7 @@
         .hero-card p {
             color: var(--text-gray);
             font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
 
         .floating-element {
@@ -491,9 +513,9 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -559,6 +581,10 @@
             .expertise-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -571,15 +597,12 @@
             }
 
             .isla-grid,
-            .expertise-grid {
+            .expertise-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
             .about-visual {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -622,16 +645,15 @@
                 <p class="subtitle">& ISLA Developer</p>
                 <p>Membangun arsitektur kepemimpinan strategis yang mengintegrasikan human capital, data intelligence, dan strategic leadership untuk transformasi organisasi di era digital.</p>
                 <a href="#kontak" class="cta-button">
-                    Mari Berdiskusi <i class="fas fa-arrow-right"></i>
+                    Mari Berdiskusi
                 </a>
             </div>
             <div class="hero-visual fade-in">
                 <div class="hero-card">
                     <h3>ISLA Insight Framework</h3>
                     <p>Jelajahi framework kepemimpinan strategis yang mengintegrasikan human capital, data intelligence, dan strategic leadership untuk transformasi organisasi di era digital.</p>
-                    <br>
-                    <a href="#" style="color: var(--accent); text-decoration: none; font-weight: 500;">
-                        Kunjungi ISLA Insight <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+                    <a href="https://forisaabadijayasejahtera.github.io/ISLA-Insight/" target="_blank" class="cta-button-outline">
+                        Kunjungi ISLA Insight
                     </a>
                 </div>
             </div>
@@ -779,7 +801,12 @@
                 <a href="https://linkedin.com/in/yanto-goutama-chcm-cplc-369322223" target="_blank" class="contact-card">
                     <i class="fab fa-linkedin"></i>
                     <h3>LinkedIn</h3>
-                    <p>/in/yanto-goutama-chcm-cplc-369322223/</p>
+                    <p>/in/yanto-goutama-chcm-cplc</p>
+                </a>
+                <a href="https://wa.me/6285117283177" target="_blank" class="contact-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>+62 851-1728-3177</p>
                 </a>
             </div>
         </div>
