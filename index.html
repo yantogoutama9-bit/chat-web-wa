@@ -3,35 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISLA Insight - Yanto Goutama</title>
+    <title>Yanto Goutama | Strategic Leadership Architech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #d4a574;
+            --accent-light: #e8d5b7;
+            --bg-cream: #faf9f6;
+            --bg-white: #ffffff;
+            --text-dark: #1a202c;
+            --text-gray: #4a5568;
+            --text-light: #718096;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 40px rgba(0,0,0,0.12);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.7;
         }
 
-        /* Header Navigation */
-        header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-        }
-
+        /* Navigation */
         nav {
-            max-width: 1200px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            border-bottom: 1px solid rgba(26, 54, 93, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -39,188 +59,767 @@
         }
 
         .logo {
-            color: white;
+            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 600;
+            color: var(--primary);
             text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            color: var(--text-gray);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            opacity: 0.7;
+            color: var(--primary);
         }
 
-        /* Main Content */
-        main {
-            flex: 1;
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, #f5f0e8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-content p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .hero-visual {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 6rem 2rem 2rem;
+        }
+
+        .hero-card {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            max-width: 400px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: var(--accent-light);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .float-1 { top: 10%; left: 10%; animation: float 6s ease-in-out infinite; }
+        .float-2 { bottom: 20%; right: 5%; animation: float 8s ease-in-out infinite reverse; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* ISLA Framework Section */
+        .isla-section {
+            padding: 6rem 5%;
+            background: var(--bg-white);
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .isla-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
 
         .isla-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 3rem;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: var(--bg-cream);
+            padding: 2.5rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .isla-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-light);
         }
 
         .isla-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .isla-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .isla-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-list li i {
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #f5f0e8 0%, var(--bg-cream) 100%);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--accent);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .highlight-box h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Expertise Section */
+        .expertise-section {
+            padding: 6rem 5%;
+            background: var(--bg-white);
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .expertise-card {
+            background: var(--bg-cream);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .expertise-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .expertise-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
-            font-size: 2.5rem;
-            color: white;
+            color: var(--primary);
+            font-size: 1.5rem;
         }
 
-        h1 {
-            color: #333;
+        .expertise-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 2rem;
+            font-size: 1.25rem;
         }
 
-        p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 2rem;
+        .expertise-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
         }
 
-        .visit-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .visit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-
-        /* Footer - Sesuai struktur yang sudah ada */
-        footer {
-            background: rgba(0, 0, 0, 0.2);
-            color: white;
-            padding: 2rem;
             text-align: center;
         }
 
-        .footer-content {
-            max-width: 800px;
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section > p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-item a {
-            color: white;
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 16px;
             text-decoration: none;
-            opacity: 0.9;
+            color: white;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .contact-item a:hover {
-            text-decoration: underline;
+        .contact-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
         }
 
-        .copyright {
-            opacity: 0.7;
+        .contact-card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-light);
+        }
+
+        .contact-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
             font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container,
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .isla-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
             .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
+                display: none;
             }
-            
-            .isla-card {
-                padding: 2rem;
+
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 0.5rem;
+
+            .isla-grid,
+            .expertise-grid {
+                grid-template-columns: 1fr;
             }
+
+            .about-visual {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">YG</a>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Yanto Goutama</a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="isla.html">ISLA</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#isla">ISLA Framework</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#keahlian">Keahlian</a></li>
+                <li><a href="#kontak">Kontak</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <main>
-        <div class="isla-card">
-            <div class="isla-icon">ISLA</div>
-            <h1>ISLA Insight Framework</h1>
-            <p>
-                Jelajahi framework kepemimpinan strategis yang mengintegrasikan 
-                human capital, data intelligence, dan strategic leadership untuk 
-                transformasi organisasi di era digital.
-            </p>
-            <a href="https://forisaabadijayasejahtera.github.io/ISLA-Insight/" 
-               target="_blank" 
-               class="visit-btn">
-                Kunjungi ISLA Insight →
-            </a>
         </div>
-    </main>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+        <div class="floating-element float-1"></div>
+        <div class="floating-element float-2"></div>
+        <div class="hero-container">
+            <div class="hero-content fade-in">
+                <h1>Strategic Leadership <span>Architech</span></h1>
+                <p class="subtitle">& ISLA Developer</p>
+                <p>Membangun arsitektur kepemimpinan strategis yang mengintegrasikan human capital, data intelligence, dan strategic leadership untuk transformasi organisasi di era digital.</p>
+                <a href="#kontak" class="cta-button">
+                    Mari Berdiskusi <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="hero-visual fade-in">
+                <div class="hero-card">
+                    <h3>ISLA Insight Framework</h3>
+                    <p>Jelajahi framework kepemimpinan strategis yang mengintegrasikan human capital, data intelligence, dan strategic leadership untuk transformasi organisasi di era digital.</p>
+                    <br>
+                    <a href="#" style="color: var(--accent); text-decoration: none; font-weight: 500;">
+                        Kunjungi ISLA Insight <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ISLA Framework Section -->
+    <section class="isla-section" id="isla">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <h2>ISLA Framework</h2>
+                <p>Integrated Strategic Leadership Architech — Merancang masa depan kepemimpinan melalui pendekatan arsitektural yang sistematis dan terintegrasi.</p>
+            </div>
+            <div class="isla-grid">
+                <div class="isla-card fade-in">
+                    <div class="isla-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Integrated</h3>
+                    <p>Integrasi multidisiplin yang menyatukan berbagai dimensi kepemimpinan, strategi, dan operasional organisasi dalam satu kesatuan arsitektural.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Holistic Systems Thinking</li>
+                        <li><i class="fas fa-check"></i> Cross-functional Alignment</li>
+                        <li><i class="fas fa-check"></i> Synergistic Design</li>
+                    </ul>
+                </div>
+                <div class="isla-card fade-in">
+                    <div class="isla-icon">
+                        <i class="fas fa-chess-king"></i>
+                    </div>
+                    <h3>Strategic</h3>
+                    <p>Perencanaan jangka panjang dengan visi arsitektural yang memastikan setiap keputusan kepemimpinan membangun fondasi yang kokoh untuk masa depan.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Vision Architecture</li>
+                        <li><i class="fas fa-check"></i> Structural Planning</li>
+                        <li><i class="fas fa-check"></i> Adaptive Strategy</li>
+                    </ul>
+                </div>
+                <div class="isla-card fade-in">
+                    <div class="isla-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Leadership</h3>
+                    <p>Kepemimpinan transformasional yang dirancang dengan pendekatan arsitektur untuk menciptakan pengaruh yang berkelanjutan dan bermakna.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Architectural Influence</li>
+                        <li><i class="fas fa-check"></i> Structural Authority</li>
+                        <li><i class="fas fa-check"></i> Transformative Impact</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box fade-in" style="margin-top: 3rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h4>Architech Foundation</h4>
+                <p>Dasar filosofis ISLA yang menggabungkan prinsip arsitektur (konstruksi, estetika, fungsi) dengan fondasi kepemimpinan (visi, integritas, layanan)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="tentang">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-content fade-in">
+                    <h2>Tentang Saya</h2>
+                    <p>Sebagai seorang <strong>Strategic Leadership Architech</strong>, saya mengkhususkan diri dalam merancang dan membangun fondasi kepemimpinan yang kokoh, berkelanjutan, dan adaptif terhadap perubahan.</p>
+                    <p>Saat ini, saya tengah mengembangkan <strong>Integrated Strategic Leadership Architech (ISLA)</strong> — sebuah pendekatan revolusioner yang menggabungkan prinsip-prinsip arsitektur organisasi dengan strategi kepemimpinan terintegrasi untuk menciptakan transformasi yang berkelanjutan.</p>
+                    <div class="highlight-box">
+                        <h4>Current Development</h4>
+                        <p>Framework Development - Terus mengembangkan dan menyempurnakan ISLA Framework untuk menjawab tantangan kepemimpinan di era digital.</p>
+                    </div>
+                </div>
+                <div class="about-visual fade-in">
+                    <div class="stat-card">
+                        <div class="stat-number">ISLA</div>
+                        <div class="stat-label">Framework Development</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><i class="fas fa-infinity" style="color: var(--accent);"></i></div>
+                        <div class="stat-label">Continuous Innovation</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><i class="fas fa-layer-group" style="color: var(--accent);"></i></div>
+                        <div class="stat-label">Integrated Approach</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><i class="fas fa-rocket" style="color: var(--accent);"></i></div>
+                        <div class="stat-label">Transformative Impact</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section" id="keahlian">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <h2>Area Keahlian Strategis</h2>
+                <p>Kombinasi unik antara pemikiran arsitektural dan kepemimpinan strategis untuk menciptakan solusi transformasional.</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Organizational Architecture</h3>
+                    <p>Merancang struktur organisasi yang adaptif, resilient, dan selaras dengan strategi bisnis jangka panjang.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Strategic Visioning</h3>
+                    <p>Pengembangan visi strategis komprehensif dengan roadmap implementasi yang terukur dan achievable.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Leadership Development</h3>
+                    <p>Program pengembangan kepemimpinan berbasis ISLA untuk membangun kapasitas pemimpin di semua level.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>System Integration</h3>
+                    <p>Integrasi sistem dan proses bisnis untuk menciptakan operasional yang seamless dan efisien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="kontak">
+        <div class="section-container">
+            <h2 class="fade-in">Mari Membangun Bersama</h2>
+            <p class="fade-in">Tertarik dengan ISLA atau ingin berkolaborasi dalam pengembangan kepemimpinan strategis? Mari kita mulai percakapan.</p>
+            <div class="contact-grid fade-in">
+                <a href="mailto:info.forisaimpact@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>info.forisaimpact@gmail.com</p>
+                </a>
+                <a href="https://linkedin.com/in/yanto-goutama-chcm-cplc-369322223" target="_blank" class="contact-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>/in/yanto-goutama-chcm-cplc-369322223/</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="contact-info">
-                <div class="contact-item">
-                    📧 <a href="mailto:info.forisaimpact@gmail.com">info.forisaimpact@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    📱 <a href="https://wa.me/6284117283177">WhatsApp</a>
-                </div>
-                <div class="contact-item">
-                    💼 <a href="https://www.linkedin.com/in/yanto-goutama-chcm-cplc-369322223/">LinkedIn</a>
-                </div>
-            </div>
-            <div class="copyright">
-                © 2026 Yanto Goutama. All Rights Reserved.
-            </div>
-        </div>
+        <p>&copy; 2026 Yanto Goutama. Strategic Leadership Architech.</p>
     </footer>
+
+    <script>
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
